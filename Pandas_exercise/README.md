@@ -15,3 +15,9 @@
 `df['column_name_num'].sum()`: Suma los valores numéricos de la columna indicada.
 
 `df.groupby('column_name')`: Agrupa los valores de la columna indicada con el objetivo de poder aplicar funciones sobre los mismos.
+
+`df[column_name].str.replace('$', '')`: Eliminar el carácter `$`, o substituirlo por lo que queramos.
+
+`df[column_name].apply(lambda_function)`: Aplicamos una función lambda a una columna en concreto.
+
+`df['column_name].nunique()`: Entendiendo el nombre de la función, *number of uniques*, podemos saber que se refiere a la cantidad de valores únicos de la columna indicada. 
