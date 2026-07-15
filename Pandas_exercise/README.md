@@ -40,3 +40,10 @@
 `df.loc[(...) & (...)]`: Para filtrar dadas 2 condiciones simultáneas.
 
 `df.idxmax()`: Busca el índice del valor máximo.
+
+
+* **02_Euro12:**
+
+`df.sort_values(by=['column_1', 'column_2'])`: Ordena el DataFrame en función de las columnas que le indiquemos. El orden de las columnas es el orden que se seguirá.
+
+`df.iloc[:, :]`: El **primer bloque** de dígitos corresponde a las **filas** que queremos obtener. El **segundo bloque** de dígitos corresponde a las **columnas** que queremos obtener. 
