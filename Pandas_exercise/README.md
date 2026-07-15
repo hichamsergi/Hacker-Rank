@@ -46,4 +46,11 @@
 
 `df.sort_values(by=['column_1', 'column_2'])`: Ordena el DataFrame en función de las columnas que le indiquemos. El orden de las columnas es el orden que se seguirá.
 
-`df.iloc[:, :]`: El **primer bloque** de dígitos corresponde a las **filas** que queremos obtener. El **segundo bloque** de dígitos corresponde a las **columnas** que queremos obtener. 
+`df.iloc[:, :]`: El **primer bloque** de dígitos corresponde a las **filas** que queremos obtener. El **segundo bloque** de dígitos corresponde a las **columnas** que queremos obtener.
+
+
+* **03_Fictional_Army:**
+
+`df.set_index('column', inplace=True)`: Indicando *inplace=True*, especificamos que modificamos el DataFrame original modificando el indice.
+
+`df.loc[[...], [...]]`: Si establecemos un indice con datos string, el **primer bloque** corresponde a las **filas** que queremos obtener. El **segundo bloque** corresponde a las **columnas** que queremos obtener.
