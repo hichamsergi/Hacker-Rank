@@ -15,7 +15,7 @@
 
 `df['column_name_num'].sum()`: Suma los valores numéricos de la columna indicada.
 
-`df.groupby('column_name')`: Agrupa los valores de la columna indicada con el objetivo de poder aplicar funciones sobre los mismos.
+`df.groupby(['column_name'])`: Agrupa los valores de la columna indicada con el objetivo de poder aplicar funciones sobre los mismos.
 
 `df[column_name].str.replace('$', '')`: Eliminar el carácter `$`, o substituirlo por lo que queramos.
 
