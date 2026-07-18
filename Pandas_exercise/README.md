@@ -54,3 +54,19 @@
 `df.set_index('column', inplace=True)`: Indicando *inplace=True*, especificamos que modificamos el DataFrame original modificando el indice.
 
 `df.loc[[...], [...]]`: Si establecemos un indice con datos string, el **primer bloque** corresponde a las **filas** que queremos obtener. El **segundo bloque** corresponde a las **columnas** que queremos obtener.
+
+
+### 03_Grouping:
+
+* **01_Regiment:**
+
+`df.groupby('column', as_index=False)`: Con el argumento `as_index=False` lo que generamos es una salida sin estructura gerarquica, idea para generar un nuevo DataFrame.
+
+
+* **02_Occupation:**
+
+`df.groupby('column').is_X.mean()`: Obtenemos el porcentaje de valores no nulos respecto del total, muy util para obtener % de valores validos.
+
+`df.groupby('column').age.agg(['min', 'max'])`: Para poder aplicar diferentes funciones a una columna, `agg` nos permite aplicarlas proporcionandolas como valores string(`agg(['min', 'max'])`).
+
+`df.groupby(['column1', 'column2']).size()`: La función `size` cuenta la cantidad de registros que tiene la agrupación, dandonos por lo tanto un recuento. No es lo mismo que `count`, que si que diferencia con valores nulos(`NaN`).
