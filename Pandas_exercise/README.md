@@ -70,3 +70,27 @@
 `df.groupby('column').age.agg(['min', 'max'])`: Para poder aplicar diferentes funciones a una columna, `agg` nos permite aplicarlas proporcionandolas como valores string(`agg(['min', 'max'])`).
 
 `df.groupby(['column1', 'column2']).size()`: La función `size` cuenta la cantidad de registros que tiene la agrupación, dandonos por lo tanto un recuento. No es lo mismo que `count`, que si que diferencia con valores nulos(`NaN`).
+
+
+* **03_Alcohol_Consumption:**
+
+`df.grouby('column').mean(numeric_only=True)`: El argumento `numeric_only`, en ciertas funciones, ayuda a afinar las columnas sobre las que se aplica la función. De esta forma, solo se aplicará la función a las columnas numéricas.
+
+
+### 04_Apply:
+
+* **01_US_Crime_Rates:**
+
+`pd.to_datetime(df.date_column, format="%Y")`: Transformamos el tipo de dato de la columna `date_colummn` en un dato *datetime*. 
+
+`df.resample('10YS').sum()`: *Resample* permite aplicar agrupamientos temporales, funcionando en la práctica como *groupby* para datos temporales. Los argumentos de agrupacion pueden variar en función de los bloques que queramos recoger. En el ejemplo, agrupamos por décadas. Ejemplo: *10YS*, equivale a *10* años, desde que el año(*Y*) empieza(*S*).
+
+`df.resample('10YS').agg(rule_agg)`: En este caso, *agg* nos permite aplicar diferentes funciones a diferentes columnas. Para poder separar entre las diferentes funciones que queremos aplicar a las diferentes columnas, debemos hacerlo mediante una estructura de diccionario. La clave es el nombre de la columna y el valor la función que le aplicaremos. 
+
+* **02_Students_Alcohol_Consumption:**
+
+``:
+
+``:
+
+``:
