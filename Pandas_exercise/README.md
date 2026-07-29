@@ -87,10 +87,31 @@
 
 `df.resample('10YS').agg(rule_agg)`: En este caso, *agg* nos permite aplicar diferentes funciones a diferentes columnas. Para poder separar entre las diferentes funciones que queremos aplicar a las diferentes columnas, debemos hacerlo mediante una estructura de diccionario. La clave es el nombre de la columna y el valor la función que le aplicaremos. 
 
-* **02_Students_Alcohol_Consumption:**
+ **02_Students_Alcohol_Consumption:**
 
-``:
+`df.select_dtypes(include=['int', 'float'])`: Seleccionamos los registros con el tipo de dato indicado en el argumento `include=[...]`.
 
-``:
 
-``:
+### 05_Merge:
+
+* **01_Auto_MPG:**
+
+`df.dropna(axis=1, inplace=True)`: Eliminamos los valores núlos. Indicando `axis=1`, se eliminan las columnas, y con `axis=0`, los registros.
+
+`pd.concat([df1, df2], ignore_index=True)`: Se encadenan los DataFrames indicados en la lista. Indicamos `ignore_index=True`, para que se *reseteen* los índices de los DataFrames cuando se conjuntan.
+
+`np.random.randint(15000, 73001, size=(df.shape[0]))`: Generamos valores núlos. El primer argumento representa el valor mínimo que vamos a asignar. El segundo, el valor máximo.
+
+
+* **02_Fictious_Names:**
+
+Vale la pena mencionar que la principal diferencia entre las funciones `concat` y `merge` de pandas, consisten en el hecho de que `concat`, **apila** los diferentes DataFrames, mientras que `merge`, lo que hace es **combina**.
+
+`pd.merge(df1, df2, on='column1', how='inner')`: Combinamos varios DataFrames basandonos en la columna indicada en el argumento `on=`. El argumneto `how=` se utiliza para poder indicar el tipo de combinación que queremos, ya sea `inner` o `outer`.
+
+
+* **03_Housing_Market:**
+
+`df.rename(columns={'col1':'col11', 'col2':'col22'})`: Renombramos las columnas que se indiquen. Para poder hacer el proceso de *mapping*, debemos proporionar un diccionario con pares **columna antigua** y **columna nueva**.
+
+`series.to_frame()`: Convertimos una Serie, Dataframe unidimensional, en un Dataframe bidimensional. 
