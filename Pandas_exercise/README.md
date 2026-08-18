@@ -105,7 +105,7 @@
 
 * **02_Fictious_Names:**
 
-Vale la pena mencionar que la principal diferencia entre las funciones `concat` y `merge` de pandas, consisten en el hecho de que `concat`, **apila** los diferentes DataFrames, mientras que `merge`, lo que hace es **combina**.
+**CONCEPTO:** Vale la pena mencionar que la principal diferencia entre las funciones `concat` y `merge` de pandas, consisten en el hecho de que `concat`, **apila** los diferentes DataFrames, mientras que `merge`, lo que hace es **combina**.
 
 `pd.merge(df1, df2, on='column1', how='inner')`: Combinamos varios DataFrames basandonos en la columna indicada en el argumento `on=`. El argumneto `how=` se utiliza para poder indicar el tipo de combinación que queremos, ya sea `inner` o `outer`.
 
@@ -114,4 +114,22 @@ Vale la pena mencionar que la principal diferencia entre las funciones `concat` 
 
 `df.rename(columns={'col1':'col11', 'col2':'col22'})`: Renombramos las columnas que se indiquen. Para poder hacer el proceso de *mapping*, debemos proporionar un diccionario con pares **columna antigua** y **columna nueva**.
 
-`series.to_frame()`: Convertimos una Serie, Dataframe unidimensional, en un Dataframe bidimensional. 
+`series.to_frame()`: Convertimos una Serie, Dataframe unidimensional, en un Dataframe bidimensional.
+
+
+### 06_Stats:
+
+* **01_US_Baby_Names:**
+
+`df.drop(axis=1, columns=['column-1', 'column-2'])`: Al indicar `axis=1`, especificamos que queremos eliminar columnas. Dar el argumneto anterior acompañado de `columns=[...]`, hace que se eliminen las columnas que hemos indicado en el interior.
+
+**CONCEPTO:** Los filtros de mascaras booleanas nos ayudan a evitar bucles innecesarios. De forma simple, podriamos decir que consiste en hacer slicing de un DataFrame con una sentencia booleana.
+
+`df[df.column1 == df.column1.min()]`: Aplicamos un filtro de masacara booleana. Haciendo que solo podamos mostrar los degistros del DataFrame que tengan un valor igual al mínimo de la columna `column1`.
+
+
+* **02_Wind_Stats:**
+
+`pd.read_csv(..., parse_dates=[[0,1,2]])`: El argumneto `parse_dates=[[..., ...]]` conjunta las columnas indicadas como índices, de forma que se conviertan en una única columna en formato *datetime*.
+
+**la suma de valores booleanos da el recuento de valores *True***
