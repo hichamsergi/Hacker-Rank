@@ -48,6 +48,8 @@
 
 `df.iloc[:, :]`: El **primer bloque** de dígitos corresponde a las **filas** que queremos obtener. El **segundo bloque** de dígitos corresponde a las **columnas** que queremos obtener.
 
+`df.str.startswith("...")`: Recogemos únicamente los registros que empiecen por la letra indicada.
+
 
 * **03_Fictional_Army:**
 
