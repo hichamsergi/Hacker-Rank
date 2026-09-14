@@ -90,6 +90,8 @@
 `df.resample('10YS').agg(rule_agg)`: En este caso, *agg* nos permite aplicar diferentes funciones a diferentes columnas. Para poder separar entre las diferentes funciones que queremos aplicar a las diferentes columnas, debemos hacerlo mediante una estructura de diccionario. La clave es el nombre de la columna y el valor la función que le aplicaremos. 
 
  **02_Students_Alcohol_Consumption:**
+ 
+ `df[["col1", "col2"]].applymap(lambda_f)`: Aplicamos una función lambda a un objeto Serie. 
 
 `df.select_dtypes(include=['int', 'float'])`: Seleccionamos los registros con el tipo de dato indicado en el argumento `include=[...]`.
 
