@@ -102,7 +102,9 @@
 
 `df.dropna(axis=1, inplace=True)`: Eliminamos los valores núlos. Indicando `axis=1`, se eliminan las columnas, y con `axis=0`, los registros.
 
-`pd.concat([df1, df2], ignore_index=True)`: Se encadenan los DataFrames indicados en la lista. Indicamos `ignore_index=True`, para que se *reseteen* los índices de los DataFrames cuando se conjuntan.
+`df1.join( df2 )`: Se concatenan los dataframes "alargando" el DataFrame original. 
+
+`pd.concat([df1, df2], ignore_index=True)`: Se "apilan" los DataFrames indicados en la lista. Indicamos `ignore_index=True`, para que se *reseteen* los índices de los DataFrames cuando se conjuntan.
 
 `np.random.randint(15000, 73001, size=(df.shape[0]))`: Generamos valores núlos. El primer argumento representa el valor mínimo que vamos a asignar. El segundo, el valor máximo.
 
