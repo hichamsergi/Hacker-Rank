@@ -129,8 +129,6 @@
 
 `df.drop(axis=1, columns=['column-1', 'column-2'])`: Al indicar `axis=1`, especificamos que queremos eliminar columnas. Dar el argumneto anterior acompañado de `columns=[...]`, hace que se eliminen las columnas que hemos indicado en el interior.
 
-**CONCEPTO:** Los filtros de mascaras booleanas nos ayudan a evitar bucles innecesarios. De forma simple, podriamos decir que consiste en hacer slicing de un DataFrame con una sentencia booleana.
-
 `df[df.column1 == df.column1.min()]`: Aplicamos un filtro de masacara booleana. Haciendo que solo podamos mostrar los degistros del DataFrame que tengan un valor igual al mínimo de la columna `column1`.
 
 
@@ -138,4 +136,10 @@
 
 `pd.read_csv(..., parse_dates=[[0,1,2]])`: El argumneto `parse_dates=[[..., ...]]` conjunta las columnas indicadas como índices, de forma que se conviertan en una única columna en formato *datetime*.
 
-**la suma de valores booleanos da el recuento de valores *True***
+**CONCEPTO:** Las mascaras booleanas aplican un filtro lógico a cada elemento de cada registro, señalando valores `True` o `Falsep`. De esta forma, si concatenamos cualquier funcion, como `sum`, solo la aplicará a los valores `True`. 
+
+**CONCEPTO:** En las seríes temporales, el acceso a los datos se puede dar mediante atributos. De esta forma, podemos acceder a el año, mes o día mediante `*.year`, `*.mont` y `*.day`.
+
+`df.notna()`: Señala con `True` o `False` los valores rellenados y vacions respectivamente.
+
+`df.isna()`: Lo mismo que la anterior, pero a la inversa. 
