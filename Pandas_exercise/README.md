@@ -143,3 +143,38 @@
 `df.notna()`: Señala con `True` o `False` los valores rellenados y vacions respectivamente.
 
 `df.isna()`: Lo mismo que la anterior, pero a la inversa. 
+
+
+### 07_Visualization: 
+
+#### Gráfico de LÍNEAS:
+
+Conceta puntos de datos individuales mediante líneas en un eje bidimensional. Suele ser útil para analizar mediante series temporales el desarrollo de una métrica. 
+
+Podemos elaborar un gráfico siguiendo los pasos:
+
+1. Definir los valores del eje *x* e *y*:
+```python
+years = [1950, 1960, 1970, 1980, 1990, 2000, 2010]
+gdp = [300.2, 543.3, 1075.9, 2862.5, 5979.6, 10289.7, 14958.3]
+```
+
+2. Cargar los datos en el gráfico:
+```python
+plt.plot(years, gdp, color=’green’, marker=’o’, linestyle=’solid’)
+```
+* El primer elemento marca el eje `y`, el segundo el `x`. El resto de atributos decoran el gráfico. 
+
+3. Contextualizar con información:
+```python
+# añade un título
+plt.title("Nominal GDP")
+# añade una etiqueta al eje y
+plt.ylabel("Billions of $")
+```
+
+4. Mostramos el gráfico:
+```python
+plt.show()
+```
+
