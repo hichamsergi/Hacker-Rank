@@ -178,3 +178,4 @@ plt.ylabel("Billions of $")
 plt.show()
 ```
 
+#### Gráfico de B:
