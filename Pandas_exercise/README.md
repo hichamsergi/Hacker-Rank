@@ -178,4 +178,54 @@ plt.ylabel("Billions of $")
 plt.show()
 ```
 
-#### Gráfico de B:
+
+#### Gráfico de BARRAS:
+
+Representa datos categóricos mediante rectángulos, la longitud de los rectángulos es proporcional al valor representado.
+
+En el eje **X** podemos ver representada la categoría. En el eje **Y**, la escala numérica del dato. Sabiendo esto, podemos entender los siguientes pasos:
+
+1. Definir los valores del eje **X** e **Y**:
+```python
+n_item = top5.values
+items = top5.index.values
+```
+
+2. Indicar el eje de cada conjunto de datos:
+```python
+plt.bar(items, n_item)
+```
+
+3. Adornarlo:
+```python
+plt.xticks(rotation=70)
+plt.ylabel("Number of items")
+```
+
+
+#### Gráfico de DISPERSIÓN:
+
+Diagrama que utiliza cordenadas cartesianas para representar valores de dos variables cuantitativas. Cada punto, representa una observación individual vinculada a los valores del eje **X** e **Y**, que permite identificar correlación entre ambas variables, valores atípicos y concentraciones de datos.
+
+Ahora vamos a ver como generar uno:
+
+1. Definimos las variables numéricas sobre las que queremos observar vinculación:
+```python
+orders = chipo.groupby("order_id").agg({
+    "item_price": "sum",
+    "quantity": "sum"
+})
+```
+
+Ahora tenemos un DataFrame donde almacenamos el total de artículos por pedido, y el precio de cada pedido.
+
+2. Definimos el título de los ejes:
+```python
+plt.xlabel("Order prices")
+plt.ylabel("Number of items per order")
+```
+
+3. Indicamos los ejes de cada variable y mostramos:
+```python
+plt.scatter(orders["item_price"], orders["quantity"], s=25, alpha=0.5)
+```
