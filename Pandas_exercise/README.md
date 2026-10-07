@@ -229,3 +229,6 @@ plt.ylabel("Number of items per order")
 ```python
 plt.scatter(orders["item_price"], orders["quantity"], s=25, alpha=0.5)
 ```
+
+
+quantityxunitprice.index.get_level_values("Country")
